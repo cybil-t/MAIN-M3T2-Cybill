@@ -1,0 +1,229 @@
+/* ==========================================================================
+   DESIGN TOKENS - CANDY PASTEL THEME
+   ========================================================================== */
+:root {
+  /* --- Colour Roles --- */
+  --clr-bg-main: #FFF8FA;          /* Marshmallow Cream */
+  --clr-bg-card: #FFFFFF;          /* Pure White Card */
+  --clr-bg-alt: #F0E6FF;           /* Soft Lavender */
+  
+  --clr-primary: #D67AB1;         /* Candy Pink (Darkened slightly for AA contrast) */
+  --clr-primary-hover: #C25E9B;   /* Deep Candy Pink */
+  --clr-secondary: #3D9981;       /* Mint Green (Darkened for AA contrast) */
+  --clr-accent: #B08000;          /* Warm Honey Yellow (Darkened for AA contrast) */
+  
+  --clr-text-main: #2D2036;       /* Deep Berry Navy (High contrast body text) */
+  --clr-text-muted: #5C4A6B;      /* Soft Berry Gray */
+  --clr-border: #F3CBE5;          /* Soft Pink Border */
+
+  /* --- Spacing Scale --- */
+  --space-3xs: 0.25rem;  /* 4px */
+  --space-2xs: 0.5rem;   /* 8px */
+  --space-xs:  0.75rem;  /* 12px */
+  --space-s:   1rem;     /* 16px */
+  --space-m:   1.5rem;   /* 24px */
+  --space-l:   2rem;     /* 32px */
+  --space-xl:  3rem;     /* 48px */
+
+  /* --- Type Scale --- */
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --step--1: 0.875rem; /* 14px */
+  --step-0:  1rem;     /* 16px Body */
+  --step-1:  1.25rem;  /* 20px Subheading */
+  --step-2:  1.563rem; /* 25px H3 */
+  --step-3:  1.953rem; /* 31px H2 */
+  --step-4:  2.441rem; /* 39px H1 */
+
+  /* --- UI Tokens --- */
+  --radius-s: 8px;
+  --radius-m: 16px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 4px 15px rgba(214, 122, 177, 0.15);
+}
+
+/* ==========================================================================
+   BASE & TYPOGRAPHY
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--clr-text-main);
+  background-color: var(--clr-bg-main);
+  padding: var(--space-s);
+}
+
+h1, h2, h3 {
+  color: var(--clr-text-main);
+  line-height: 1.2;
+  margin-bottom: var(--space-s);
+}
+
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); }
+
+p {
+  margin-bottom: var(--space-m);
+  color: var(--clr-text-muted);
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.site-nav {
+  background: var(--clr-bg-card);
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--space-l);
+  border: 2px solid var(--clr-border);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--space-s);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--clr-text-main);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover & Focus States */
+.site-nav a:hover {
+  background-color: var(--clr-bg-alt);
+  color: var(--clr-primary);
+}
+
+.site-nav a:focus-visible {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   REUSABLE COMPONENTS
+   ========================================================================== */
+/* Component 1: Candy Card */
+.card {
+  background-color: var(--clr-bg-card);
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius-m);
+  padding: var(--space-m);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--space-m);
+}
+
+/* Component 2: Candy Button */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: var(--step-0);
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: var(--clr-primary);
+  border: none;
+  padding: var(--space-xs) var(--space-m);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--clr-primary-hover);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--clr-text-main);
+  outline-offset: 3px;
+}
+/* ==========================================================================
+   SERVICES PAGE LAYOUT
+   ========================================================================== */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-s);
+}
+
+main > h1 {
+  text-align: center;
+  margin-bottom: var(--space-s);
+}
+
+main > p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-l);
+}
+
+/* Service card headings */
+.card h2 {
+  font-size: var(--step-2);
+  color: var(--clr-primary-hover);
+}
+
+/* Service card buttons */
+.card .btn {
+  margin-top: var(--space-2xs);
+}
+
+/* Keyboard and mouse interaction */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  body {
+    padding: var(--space-xs);
+  }
+
+  h1 {
+    font-size: var(--step-3);
+  }
+
+  .site-nav {
+    border-radius: var(--radius-m);
+    padding: var(--space-s);
+  }
+
+  .site-nav ul {
+    gap: var(--space-2xs);
+  }
+
+  .site-nav a {
+    display: inline-block;
+    padding: var(--space-2xs) var(--space-xs);
+  }
+
+  main {
+    padding: var(--space-2xs);
+  }
+
+  .card {
+    padding: var(--space-s);
+  }
+
+  .card h2 {
+    font-size: var(--step-1);
+  }
+}
