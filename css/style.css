@@ -225,5 +225,40 @@ main > p {
 
   .card h2 {
     font-size: var(--step-1);
-  }
+
+  /* ==========================================================================
+   SERVICES CONTENT - CSS GRID
+   ========================================================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
+    align-items: stretch;
 }
+
+.services-grid .card {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.services-grid .card .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Tablet layout */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+  }
+
+}}}
